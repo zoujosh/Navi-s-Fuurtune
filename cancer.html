@@ -1,0 +1,155 @@
+<style>
+.home-btn {
+  background-color: #1167b1;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  border-radius: 12px;
+}
+
+.home-btn:hover {opacity: 1; cursor: pointer;}
+
+.button1 {
+  border-radius: 4px;
+  background-color: #1167b1;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  font-family: Garamond, serif;
+}
+
+.button1 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button1 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button1:hover span {
+  padding-right: 20px;
+}
+
+.button1:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+    
+.button2 {
+  border-radius: 4px;
+  background-color: #ff3600;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  font-family: Garamond, serif;
+}
+    
+.button2 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button2 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button2:hover span {
+  padding-right: 20px;
+}
+
+.button2:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+    
+.inline {
+  display: inline-block; 
+}
+    
+.font {
+    font-family: Garamond, serif;
+    font-size: 15px;
+    color: white;
+}
+
+p{
+    animation-duration: 1.2s;
+    animation-name: slidein;
+}
+    
+img{
+    animation-duration: 1.2s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    opacity: 0;
+    margin-right: 10%;
+  }
+
+  to {
+    opacity: 1;
+    margin-right: 0%;
+  }
+
+span{
+    margin-left: 10em;    
+}
+</style>
+
+<html style="min-width:450px; background-color: #6db1ca">
+<body style="background-color: #6db1ca">
+    <head>
+        <p class = "font">
+            <script src='scripts.js'></script>
+            &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+            <a href = "testing_popup.html">
+                <button class="home-btn" title = "Homepage"><img src="Images/home.png" width = "15" height = "15"></button>
+            </a>
+        </p>
+    </head>
+        <center><img src="Images/navi_smiling.png" width = "222" height = "350"></center>      
+        <center>
+            <p class = "font"> Awww, I love those who are very in tune with their emotions, and are very understanding of the emotions of others around them. But, I don't really find these traits a turn-on. Sorry! </p>
+        </center>
+    <center>
+        <div class = "inline">
+            <a href="aquarius_compatibility.html"> <button class = "button1"><span>Read Today's Fortune</span></button> </a>
+            <button class = "button2"><span>Compatibility with other star signs</span></button>
+        </div>
+    </center>
+    </body>
+</html>

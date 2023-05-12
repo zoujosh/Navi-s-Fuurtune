@@ -1,0 +1,618 @@
+<!--Script-->
+<!--Styling-->
+<style>
+.font {
+    font-family: Garamond, serif;
+    font-size: 15px;
+    color: white;
+}
+    
+.home-btn {
+  background-color: #1167b1;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  border-radius: 12px;
+}
+
+.home-btn:hover {opacity: 1; cursor: pointer;}
+    
+.grid-container {
+    display: grid;
+    column-gap: 10px;
+    row-gap: 14px;
+    grid-template-columns: 7px 7px 7px 7px 7px 7px 7px 7px 7px 7px 7px 7px;
+    grid-template-rows: 5px 5px 5px 5px 5px 5px 5px 5px 5px 5px 5px 5px 5px 5px 5px 5px 5px 5px 5px 5px 5px 5px 5px 5px 5px 5px 5px 5px 5px 5px 5px;
+    background-color: #6db1ca;
+    padding: 10px;
+}
+    
+.grid-item{
+    background-color: #6dblca;
+    padding: 20px;
+    text-align: center;
+    font-size: 15px;
+    font-family: Garamond, serif;
+    color: white;
+}
+    
+.formatting{
+    display: grid;
+    column-gap: 50px;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    background-color: #6db1ca;
+}
+
+.formatting-calendar{
+     grid-row: 1/3;   
+}
+
+.formatting-title{
+    background-color: #6dblca;
+    text-align: left;
+    font-size: 35px;
+    font-family: Garamond, serif;
+    color: white;
+}
+
+.formatting-home{
+    background-color: #6dblca;
+    text-align: end;
+    font-size: 35px;
+    font-family: Garamond, serif;
+    color: white;
+}
+
+    #null {
+        background-color: #6db1ca
+    }
+    
+.btn {
+  background-color: #ffffff;
+  border: none;
+  color: white;
+  padding: 6px 8px;
+  text-align: center;
+  font-size: 3px;
+  font-family: Garamond, serif;
+  margin: 2px 4px;
+  opacity: 0.6;
+  transition: 0.3s;
+  border-radius: 6px;
+}
+    
+.btn:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.button2 {
+  border-radius: 4px;
+  background-color: #1167b1;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  font-family: Garamond, serif;
+}
+    
+.button2 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button2 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button2:hover span {
+  padding-right: 20px;
+}
+
+.button2:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+div{
+    animation-duration: 1.2s;
+    animation-name: slidein;
+}
+    
+@keyframes slidein {
+  from {
+    opacity: 0;
+    margin-left: 10%;
+  }
+
+  to {
+    opacity: 1;
+    margin-left: 0%;
+  }
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+</style>
+
+<!--HTML-->
+<html style="min-width:450px; background-color: #6db1ca">
+    <head>
+        <script src = "updatingCalendar.js"></script>
+    </head>
+    <div id = "null">
+    <a href = "home.html">
+        <button class="home-btn" title = "Homepage"><img src="Images/home.png" width = "15" height = "15"></button>
+    </a>
+    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+    <a href = "rating.html"><button class = "button2"><span>Rate Today's Furtune</span></button></a>
+    <div class = "formatting">
+    <div class = "formatting-calendar">
+    <div class ="grid-container">
+        <div class = "grid-item"> J </div>
+        <div class = "grid-item"> F </div>
+        <div class = "grid-item"> M </div>
+        <div class = "grid-item"> A </div>
+        <div class = "grid-item"> M </div>
+        <div class = "grid-item"> J </div>
+        <div class = "grid-item"> J </div>
+        <div class = "grid-item"> A </div>
+        <div class = "grid-item"> S </div>
+        <div class = "grid-item"> O </div>
+        <div class = "grid-item"> N </div>
+        <div class = "grid-item"> D </div>
+        
+        <div class = "grid-item"><button id = "jan0" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "feb0" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "mar0" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "apr0" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "may0" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jun0" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jul0" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "aug0" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "sep0" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "oct0" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "nov0" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "dec0" class ="btn">  </button></div>
+        
+        <div class = "grid-item"><button id = "jan1" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "feb1" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "mar1" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "apr1" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "may1" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jun1" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jul1" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "aug1" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "sep1" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "oct1" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "nov1" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "dec1" class ="btn">  </button></div>
+        
+        <div class = "grid-item"><button id = "jan2" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "feb2" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "mar2" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "apr2" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "may2" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jun2" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jul2" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "aug2" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "sep2" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "oct2" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "nov2" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "dec2" class ="btn">  </button></div>
+        
+        <div class = "grid-item"><button id = "jan3" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "feb3" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "mar3" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "apr3" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "may3" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jun3" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jul3" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "aug3" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "sep3" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "oct3" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "nov3" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "dec3" class ="btn">  </button></div>
+        
+        <div class = "grid-item"><button id = "jan4" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "feb4" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "mar4" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "apr4" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "may4" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jun4" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jul4" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "aug4" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "sep4" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "oct4" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "nov4" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "dec4" class ="btn">  </button></div>
+        
+        <div class = "grid-item"><button id = "jan5" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "feb5" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "mar5" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "apr5" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "may5" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jun5" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jul5" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "aug5" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "sep5" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "oct5" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "nov5" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "dec5" class ="btn">  </button></div>
+        
+        <div class = "grid-item"><button id = "jan6" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "feb6" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "mar6" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "apr6" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "may6" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jun6" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jul6" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "aug6" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "sep6" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "oct6" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "nov6" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "dec6" class ="btn">  </button></div>
+        
+        <div class = "grid-item"><button id = "jan7" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "feb7" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "mar7" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "apr7" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "may7" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jun7" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jul7" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "aug7" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "sep7" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "oct7" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "nov7" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "dec7" class ="btn">  </button></div>
+        
+        <div class = "grid-item"><button id = "jan8" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "feb8" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "mar8" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "apr8" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "may8" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jun8" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jul8" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "aug8" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "sep8" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "oct8" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "nov8" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "dec8" class ="btn">  </button></div>
+        
+        <div class = "grid-item"><button id = "jan9" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "feb9" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "mar9" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "apr9" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "may9" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jun9" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jul9" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "aug9" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "sep9" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "oct9" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "nov9" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "dec9" class ="btn">  </button></div>
+        
+        <div class = "grid-item"><button id = "jan10" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "feb10" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "mar10" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "apr10" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "may10" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jun10" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jul10" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "aug10" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "sep10" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "oct10" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "nov10" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "dec10" class ="btn">  </button></div>
+        
+        <div class = "grid-item"><button id = "jan11" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "feb11" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "mar11" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "apr11" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "may11" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jun11" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jul11" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "aug11" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "sep11" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "oct11" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "nov11" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "dec11" class ="btn">  </button></div>
+
+        <div class = "grid-item"><button id = "jan12" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "feb12" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "mar12" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "apr12" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "may12" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jun12" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jul12" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "aug12" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "sep12" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "oct12" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "nov12" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "dec12" class ="btn">  </button></div>
+        
+        <div class = "grid-item"><button id = "jan13" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "feb13" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "mar13" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "apr13" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "may13" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jun13" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jul13" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "aug13" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "sep13" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "oct13" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "nov13" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "dec13" class ="btn">  </button></div>
+        
+        <div class = "grid-item"><button id = "jan14" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "feb14" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "mar14" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "apr14" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "may14" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jun14" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jul14" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "aug14" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "sep14" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "oct14" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "nov14" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "dec14" class ="btn">  </button></div>
+        
+        <div class = "grid-item"><button id = "jan15" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "feb15" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "mar15" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "apr15" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "may15" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jun15" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jul15" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "aug15" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "sep15" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "oct15" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "nov15" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "dec15" class ="btn">  </button></div>
+        
+        <div class = "grid-item"><button id = "jan16" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "feb16" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "mar16" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "apr16" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "may16" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jun16" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jul16" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "aug16" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "sep16" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "oct16" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "nov16" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "dec16" class ="btn">  </button></div>
+        
+        <div class = "grid-item"><button id = "jan17" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "feb17" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "mar17" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "apr17" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "may17" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jun17" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jul17" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "aug17" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "sep17" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "oct17" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "nov17" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "dec17" class ="btn">  </button></div>
+        
+        <div class = "grid-item"><button id = "jan18" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "feb18" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "mar18" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "apr18" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "may18" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jun18" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jul18" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "aug18" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "sep18" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "oct18" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "nov18" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "dec18" class ="btn">  </button></div>
+        
+        <div class = "grid-item"><button id = "jan19" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "feb19" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "mar19" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "apr19" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "may19" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jun19" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jul19" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "aug19" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "sep19" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "oct19" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "nov19" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "dec19" class ="btn">  </button></div>
+        
+        <div class = "grid-item"><button id = "jan20" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "feb20" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "mar20" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "apr20" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "may20" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jun20" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jul20" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "aug20" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "sep20" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "oct20" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "nov20" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "dec20" class ="btn">  </button></div>
+        
+        <div class = "grid-item"><button id = "jan21" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "feb21" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "mar21" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "apr21" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "may21" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jun21" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jul21" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "aug21" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "sep21" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "oct21" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "nov21" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "dec21" class ="btn">  </button></div>
+        
+        <div class = "grid-item"><button id = "jan22" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "feb22" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "mar22" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "apr22" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "may22" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jun22" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jul22" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "aug22" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "sep22" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "oct22" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "nov22" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "dec22" class ="btn">  </button></div>
+        
+        <div class = "grid-item"><button id = "jan23" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "feb23" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "mar23" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "apr23" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "may23" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jun23" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jul23" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "aug23" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "sep23" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "oct23" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "nov23" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "dec23" class ="btn">  </button></div>
+        
+        <div class = "grid-item"><button id = "jan24" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "feb24" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "mar24" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "apr24" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "may24" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jun24" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jul24" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "aug24" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "sep24" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "oct24" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "nov24" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "dec24" class ="btn">  </button></div>
+        
+        <div class = "grid-item"><button id = "jan25" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "feb25" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "mar25" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "apr25" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "may25" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jun25" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jul25" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "aug25" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "sep25" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "oct25" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "nov25" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "dec25" class ="btn">  </button></div>
+        
+        <div class = "grid-item"><button id = "jan26" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "feb26" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "mar26" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "apr26" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "may26" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jun26" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jul26" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "aug26" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "sep26" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "oct26" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "nov26" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "dec26" class ="btn">  </button></div>
+        
+        <div class = "grid-item"><button id = "jan27" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "feb27" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "mar27" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "apr27" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "may27" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jun27" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jul27" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "aug27" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "sep27" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "oct27" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "nov27" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "dec27" class ="btn">  </button></div>
+        
+        <div class = "grid-item"><button id = "jan28" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "feb28" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "mar28" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "apr28" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "may28" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jun28" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jul28" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "aug28" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "sep28" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "oct28" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "nov28" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "dec28" class ="btn">  </button></div>
+        
+        <div class = "grid-item"><button id = "jan29" class ="btn">  </button></div>
+        <div class = "grid-item"> </div>
+        <div class = "grid-item"><button id = "mar29" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "apr29" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "may29" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jun29" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "jul29" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "aug29" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "sep29" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "oct29" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "nov29" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "dec29" class ="btn">  </button></div>
+        
+        <div class = "grid-item"><button id = "jan30"class ="btn">  </button></div>
+        <div class = "grid-item">  </div>
+        <div class = "grid-item"><button id = "mar30"class ="btn">  </button></div>
+        <div class = "grid-item">  </div>
+        <div class = "grid-item"><button id = "may30" class ="btn">  </button></div>
+        <div class = "grid-item">  </div>
+        <div class = "grid-item"><button id = "jul30" class ="btn">  </button></div>
+        <div class = "grid-item"><button id = "aug30" class ="btn">  </button></div>
+        <div class = "grid-item">  </div>
+        <div class = "grid-item"><button id = "oct30" class ="btn">  </button></div>
+        <div class = "grid-item">  </div>
+        <div class = "grid-item"><button id = "dec30" class ="btn">  </button></div>
+</div>
+    </div>
+        <div class = "formatting-title">
+            Your Annual Fortune Assessments
+        </div>
+        <div id = "date" class = "font">
+        </div>
+    </div>
+    </div>
+</html>

@@ -1,0 +1,146 @@
+<head>
+  <style>
+        html {
+          height: 200px;
+          width: 200px;      
+        }
+        .btn {
+          background-color: #1167b1;
+          border: none;
+          color: white;
+          padding: 8px 8px;
+          text-align: center;
+          font-size: 16px;
+          margin: 4px 2px;
+          opacity: 0.6;
+          transition: 0.3s;
+          border-radius: 12px;
+        }
+
+        .btn:hover {opacity: 1; cursor: pointer;}
+
+        .btn-hover {
+          background-color: #1167b1;
+          border: none;
+          color: white;
+          padding: 10px 10px;
+          text-align: center;
+          font-size: 16px;
+          margin: 4px 2px;
+          opacity: 0.6;
+          transition: 0.3s;
+          border-radius: 12px;
+        }
+
+        .btn-hover:hover {opacity: 1}
+
+        .inline {
+          display: inline-block;
+        }
+
+        .font {
+            font-family: Garamond, serif;
+            font-size: 15px;
+            color: white;
+        }
+
+        .grid-container {
+          display: grid;
+          grid-template-columns: 90px 90px 90px 90px;
+          grid-template-rows: 70px 70px 70px 70px 70px;
+          column-gap: 10px;
+          row-gap: 10px;
+          background-color: #6db1ca;
+          padding: 10px;
+        }
+
+        .grid-container > div {
+          color: white;
+          text-align: center;
+          padding: 20px 0;
+          background-color: #1167b1;
+          border-radius: 12px;
+          visibility: hidden;
+          /*position: absolute;*/
+        }
+
+        .title{
+            grid-column-start: 1;
+            grid-column-end: 5;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            font-family: Garamond, serif;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .image{
+           grid-column-start:3;
+           grid-column-end:5;
+           grid-row-start:2;
+           grid-row-end:3;
+        }
+      
+      .compatibility{
+          grid-column-start:1;
+          grid-column-end:3;
+          grid-row-start:2;
+          grid-row-end:3;
+          font-family: Garamond, serif;
+          font-size: 20px;
+      }
+      
+      .description{
+          grid-column-start:3;
+          grid-column-end:5;
+          grid-row-start:3;
+          grid-row-end:6;
+          font-family: Garamond, serif;
+          font-size: 15px;
+      }
+      
+      .navi{
+          grid-column-start:1;
+          grid-column-end:3;
+          grid-row-start:4;
+          grid-row-end:6;
+      }
+    </style>
+</head>
+
+<html style="min-width:450px; background-color: #6db1ca">
+    <body>
+    <head>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
+        <script src = "aries_compatibility_script.js"></script>
+        <a href = "aries.html">
+            <button class="btn" title = "Go back"><img src="Images/back.png" width = "15" height = "15"></button>
+        </a>
+    </head>
+        <div class = "grid-container">
+            <div class="title" id = "title"> </div>
+            <div class="image" id = "image">  </div>
+            <div class="compatibility" id = "compatibility">  </div>
+            <div class="description" id = "description">  </div>
+            <div class="navi" id = "navi"> </div>
+        </div>
+        <div id = "testing_hover"></div>
+        <div class="inline">
+            <button class="btn-hover" title = "Aquarius" id = "aquarius"><img src="Images/aquarius.png" width = "8" height = "8"></button>
+            <button class="btn-hover" title = "Pisces" id = "pisces"><img src="Images/pisces.png" width = "8" height = "8"></button>
+            <button class="btn-hover" title = "Aries" id = "aries"><img src="Images/aries.png" width = "8" height = "8"></button>
+            <button class="btn-hover" title = "Taurus" id = "taurus"><img src="Images/taurus.png" width = "8" height = "8"></button>
+            <button class="btn-hover" title = "Gemini" id = "gemini"><img src="Images/gemini.png" width = "8" height = "8"></button>
+            <button class="btn-hover" title = "Cancer" id = "cancer"><img src="Images/cancer.png" width = "8" height = "8"></button>
+            <button class="btn-hover" title = "Leo" id = "leo"><img src="Images/leo.png" width = "8" height = "8"></button>
+            <button class="btn-hover" title = "Virgo" id = "virgo"><img src="Images/virgo.png" width = "8" height = "8"></button>
+            <button class="btn-hover" title = "Libra" id = "libra"><img src="Images/libra.png" width = "8" height = "8"></button>
+            <button class="btn-hover" title = "Scorpio" id = "scorpio"><img src="Images/scorpio.png" width = "8" height = "8"></button>
+            <button class="btn-hover" title = "Saggitarius" id = "saggitarius"><img src="Images/saggitarius.png" width = "8" height = "8"></button>
+            <button class="btn-hover" title = "Capricorn" id = "capricorn"><img src="Images/capricorn.png" width = "8" height = "8"></button>
+        </div>
+    </body>
+</html>

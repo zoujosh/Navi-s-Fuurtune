@@ -1,0 +1,19 @@
+<html style="min-width:450px; background-color: #6db1ca">
+    <head>   
+        <script src = "redirect.js"></script>
+        <div id = "counter">5</div>
+    </head>
+    <body>
+        <img src = "Images/placeholder_animation.gif" width = "450" height = "500">
+        <script>
+        setInterval(function() {
+            var div = document.querySelector("#counter");
+            var count = div.textContent * 1 - 1;
+            div.textContent = count;
+            if (count <= 0) {
+                window.location.href = 'capricorn.html';
+            }
+        }, 1000);
+    </script>
+    </body>
+</html>

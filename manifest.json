@@ -1,0 +1,17 @@
+{   
+    "name": "Niva's Furrrtune",
+    "version": "0.0.1",
+    "description": "Testing...1...2...3",
+    "manifest_version": 3,
+    "permissions": [
+        "storage",
+        "alarms"
+    ],
+    "background": {
+    "service_worker": "scripts.js"
+  },
+    "action":{
+        "default_popup": "testing_popup.html",
+        "default_icon": "Images/navi_logo.png"
+    }
+}

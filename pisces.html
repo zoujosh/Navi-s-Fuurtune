@@ -1,0 +1,210 @@
+<style>
+.home-btn {
+  background-color: #1167b1;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  border-radius: 12px;
+}
+
+.home-btn:hover {opacity: 1; cursor: pointer;}
+
+.button1 {
+  border-radius: 4px;
+  background-color: #1167b1;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  font-family: Garamond, serif;
+}
+
+.button1 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button1 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button1:hover span {
+  padding-right: 20px;
+}
+
+.button1:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+    
+.button2 {
+  border-radius: 4px;
+  background-color: #ff3600;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  font-family: Garamond, serif;
+}
+    
+.button2 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button2 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button2:hover span {
+  padding-right: 20px;
+}
+
+.button2:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+    
+.inline {
+  display: inline-block; 
+}
+    
+.font {
+    font-family: Garamond, serif;
+    font-size: 15px;
+    color: white;
+}
+
+.speech {
+      transform: translatey(-10px);
+      animation: float 5s ease-in-out infinite;
+      position: relative;
+      text-align: center;
+      font-size: 14px;
+      color: white;
+      background-color: #1167b1;
+      padding: 25px;
+      border-radius: 11px;
+      box-shadow: 10px 10px #b0cfdc;
+      font-family: Garamond, serif;
+    }
+    
+    .speech:after {
+      transform: translatey(-10px);
+      color:#b0cfdc;
+      content: ".";
+      animation: float2 5s ease-in-out infinite;
+      font-weight: bold;
+      text-align: left;
+      font-size: 60px;
+      width: 55px;
+      height: 11px;
+      border-radius: 11px;
+      background-color: #1167b1;
+      position: absolute;
+      display: block;
+      bottom: -10px;
+      left: 180px;
+      box-shadow: 22px 22px #b0cfdc;
+      z-index: -2;
+    }
+        
+    @keyframes float {
+      0% {
+        transform: translatey(-20px);
+      }
+      50% {
+        transform: translatey(-35px);
+      }
+      100% {
+        transform: translatey(-20px);
+      }
+    }
+
+    @keyframes float2 {
+      0% {
+        line-height: 30px;
+        transform: translatey(5px);
+      }
+      55% {
+        line-height: 7px;
+        transform: translatey(0px);
+      }
+      60% {
+        line-height: 10px;
+      }
+      100% {
+        line-height: 30px;
+        transform: translatey(5px);
+      }
+    }
+
+    @keyframes slidein {
+  from {
+    opacity: 0;
+    margin-right: 10%;
+  }
+
+  to {
+    opacity: 1;
+    margin-right: 0%;
+  }
+
+span{
+    margin-left: 10em;    
+}
+</style>
+
+<html style="min-width:450px; background-color: #6db1ca">
+<body style="background-color: #6db1ca">
+    <head>
+        <p class = "font">
+            <script src='scripts.js'></script>
+            &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+            <a href = "testing_popup.html">
+                <button class="home-btn" title = "Homepage"><img src="Images/home.png" width = "15" height = "15"></button>
+            </a>
+        </p>
+    </head>
+        <br>
+        <center>
+            <p class = "speech"> Wow, someone who is very empathetic and always puts others before themselves. My ideal mate. Do people compare you to a golden retriever irl?</p>
+        </center>
+        <center><img src="Images/navi_blushing.jpg" width = "252" height = "350"></center>    
+    <center>
+        <div class = "inline">
+            <a href = "select_card.html"><button class = "button1"><span>Read Today's Fortune</span></button></a>
+            <a href = "pisces_compatibility.html"><button class = "button2"><span>Compatibility with other star signs</span></button></a>
+        </div>
+    </center>
+    </body>
+</html>

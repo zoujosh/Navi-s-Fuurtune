@@ -1,0 +1,123 @@
+<style>
+.very_accurate {
+  background-color: #1167b1;
+  border: none;
+  color: white;
+  padding: 20px 20px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  border-radius: 12px;
+}
+
+.accurate {
+  background-color: #3777b0;
+  border: none;
+  color: white;
+  padding: 18px 18px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  border-radius: 12px;
+}
+
+.moderate {
+  background-color: #5788b3;
+  border: none;
+  color: white;
+  padding: 16px 16px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  border-radius: 12px;
+}
+
+.unaccurate {
+  background-color: #7988b3;
+  border: none;
+  color: white;
+  padding: 18px 18px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  border-radius: 12px;
+}
+    
+.very_unaccurate {
+  background-color: #a2a7b4;
+  border: none;
+  color: white;
+  padding: 20px 20px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  border-radius: 12px;
+}
+
+.accurate:hover {opacity: 1; cursor: pointer; transform: scale(1.2);}
+.very_accurate:hover {opacity: 1; cursor: pointer; transform: scale(1.2);}
+.moderate:hover {opacity: 1; cursor: pointer; transform: scale(1.2);}
+.unaccurate:hover {opacity: 1; cursor: pointer; transform: scale(1.2);}
+.very_unaccurate:hover {opacity: 1; cursor: pointer; transform: scale(1.2);}
+    
+.font {
+    font-family: Garamond, serif;
+    font-size: 15px;
+    color: white;
+}
+
+p{
+    animation-duration: 1.2s;
+    animation-name: slidein;
+}
+    
+img{
+    animation-duration: 1.2s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    opacity: 0;
+    margin-left: 10%;
+  }
+
+  to {
+    opacity: 1;
+    margin-left: 0%;
+  }
+
+.inline {
+  display: inline-block;
+}
+</style>
+
+<html style="min-width:450px; background-color: #6db1ca">
+    <body>
+    <center>
+        <p class = "font">
+            How would you rate today's fuurtune?
+        </p>
+        <div class = "blank"><center><img id = "show_accuracy" src="Images/blank.png"></center></div>
+        <h3 id = "accuracy" class = "font">&nbsp;</h3>
+        <div class="inline">
+            <button id= "b1" class="very_accurate"> </button>
+            <button id= "b2" class="accurate"> </button>
+            <button id= "b3" class="moderate"> </button>
+            <button id= "b4" class="unaccurate"> </button>
+            <button id= "b5" class="very_unaccurate"> </button>
+        </div>
+    </center>
+    <script src = "ratingsAndCalendar.js"></script>
+    </body>
+</html>

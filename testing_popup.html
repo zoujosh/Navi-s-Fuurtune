@@ -1,0 +1,209 @@
+<style>
+ html {
+      height: 200px;
+      width: 200px;      
+    }
+    .btn {
+      background-color: #1167b1;
+      border: none;
+      color: white;
+      padding: 10px 10px;
+      text-align: center;
+      font-size: 16px;
+      margin: 4px 2px;
+      opacity: 0.6;
+      transition: 0.3s;
+      border-radius: 12px;
+    }
+    
+    body {
+        background-image: url("Images/homebackground.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .btn:hover {opacity: 1; cursor: pointer;}
+
+    .button-and-date{
+        display: inline-flex;
+        justify-content: space-between;
+    }
+    .inline {
+      display: inline-flex;
+    }
+.navi {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+}
+.container {
+  border-radius: 50%;
+  height: 312px;
+  transform: scale(0.48);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: 400px;
+}
+.container:after {
+  background-color: #f2f2f2;
+  content: "";
+  height: 10px;
+  position: absolute;
+  top: 390px;
+  width: 100%;
+}
+.container:hover {
+  transform: scale(0.54);
+}
+.container-inner {
+  clip-path: path(
+    "M 390,400 C 390,504.9341 304.9341,590 200,590 95.065898,590 10,504.9341 10,400 V 10 H 200 390 Z"
+  );
+  position: relative;
+  transform-origin: 50%;
+  top: -200px;
+}
+.circle {
+  background-color: #fee7d3;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 420px;
+  left: 10px;
+  pointer-events: none;
+  position: absolute;
+  top: 210px;
+  width: 380px;
+}
+.img {
+  pointer-events: none;
+  position: relative;
+  transform: translateY(20px) scale(1.15);
+  transform-origin: 50% bottom;
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.container:hover .img {
+  transform: translateY(0) scale(1.2);
+}
+    
+.img1 {
+  top: 164px;
+  width: 340px;
+}
+    
+   .font {
+        font-family: Garamond, serif;
+        font-size: 15px;
+        color: white;
+    }
+    
+    .speech {
+      transform: translatey(30px);
+      animation: float 5s ease-in-out infinite;
+      position: relative;
+      text-align: center;
+      font-size: 15px;
+      color: white;
+      background-color: #1167b1;
+      padding: 25px;
+      border-radius: 11px;
+      box-shadow: 10px 10px #b0cfdc;
+      font-family: Garamond, serif;
+    }
+    
+    .speech:after {
+      transform: translatey(30px);
+      color:#b0cfdc;
+      content: ".";
+      animation: float2 5s ease-in-out infinite;
+      font-weight: bold;
+      text-align: left;
+      font-size: 60px;
+      width: 55px;
+      height: 11px;
+      border-radius: 11px;
+      background-color: #1167b1;
+      position: absolute;
+      display: block;
+      bottom: -10px;
+      left: 180px;
+      box-shadow: 22px 22px #b0cfdc;
+      z-index: -2;
+    }
+        
+    @keyframes float {
+      0% {
+        transform: translatey(10px);
+      }
+      50% {
+        transform: translatey(25px);
+      }
+      100% {
+        transform: translatey(10px);
+      }
+    }
+
+    @keyframes float2 {
+      0% {
+        line-height: 30px;
+        transform: translatey(5px);
+      }
+      55% {
+        line-height: 7px;
+        transform: translatey(0px);
+      }
+      60% {
+        line-height: 10px;
+      }
+      100% {
+        line-height: 30px;
+        transform: translatey(5px);
+      }
+    }
+    
+</style>
+
+<html style="min-width:450px; min-height:553px">
+    <head>
+        <div class = "button-and-date">
+            <script src = 'home.js'></script>
+            <div id = "date" class = "font"></div>
+            &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                    <a href = "calendar.html">
+                        <button class="btn" title = "View Calendar"><img src="Images/calendar.png" width = "28" height = "28"></button>
+                    </a>
+            <a href = "test.html"><button title = "testing">Test</button></a>
+        </div>
+    </head>
+    <center>
+        <p class="speech">Tell me your star sign so I can read your furrrtune...</p>
+<div class="navi">
+      <div class="container">
+          <div class="container-inner">
+          <img
+            class="circle" src ="Images/white_circle.png"
+          />
+          <img
+            class="img img1" src = "Images/navi_default.png"
+          />
+          </div>
+      </div>
+</div>
+        </center>
+    <br><br>
+    <center>
+         <div class="inline">
+                <a href="aquarius.html"><button class="btn" title = "Aquarius" id = "aquarius"><img src="Images/aquarius.png" width = "10" height = "10"></button></a>
+                <a href="pisces.html"><button class="btn" title = "Pisces" id = "pisces"><img src="Images/pisces.png" width = "10" height = "10"></button></a>
+                <a href="aries.html"><button class="btn" title = "Aries" id = "aries"><img src="Images/aries.png" width = "10" height = "10"></button></a>
+                <a href="taurus.html"><button class="btn" title = "Taurus" id = "taurus"><img src="Images/taurus.png" width = "10" height = "10"></button></a>
+                <a href="gemini.html"><button class="btn" title = "Gemini" id = "gemini"><img src="Images/gemini.png" width = "10" height = "10"></button></a>
+                <a href="cancer.html"><button class="btn" title = "Cancer" id = "cancer"><img src="Images/cancer.png" width = "10" height = "10"></button></a>
+                <button class="btn" title = "Leo"><img src="Images/leo.png" width = "10" height = "10"></button>
+                <button class="btn" title = "Virgo"><img src="Images/virgo.png" width = "10" height = "10"></button>
+                <button class="btn" title = "Libra"><img src="Images/libra.png" width = "10" height = "10"></button>
+                <button class="btn" title = "Scorpio"><img src="Images/scorpio.png" width = "10" height = "10"></button>
+                <button class="btn" title = "Saggitarius"><img src="Images/saggitarius.png" width = "10" height = "10"></button>
+                <a href="capricorn.html"><button class="btn" title = "Capricorn" id = "capricorn"><img src="Images/capricorn.png" width = "10" height = "10"></button></a>
+        </div>
+    </center>
+</html>
